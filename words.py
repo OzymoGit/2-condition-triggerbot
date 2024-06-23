@@ -15,9 +15,11 @@ def exiting():
             sys.exit()
         except:
             raise SystemExit
+#fancy exit, nghe nói giảm khả năng detect, nhưng chạy máy khác thì cũng không quan trọng
 
-kmNet.init('192.168.2.188', '16896', '46405C53')
-#kmNet.monitor(10000)
+
+kmNet.init('192.168.2.188', '16896', '46405C53') #thiết lập kết nối đến kmbox thay đổi bằng IP và UID của bạn
+#kmNet.monitor(10000)   #bật tính năng monitor từ kmbox
 user32, kernel32, shcore = (
     WinDLL("user32", use_last_error=True),
     WinDLL("kernel32", use_last_error=True),
@@ -103,7 +105,7 @@ class TriggerBot:
                 delay_percentage = self.trigger_delay / 100.0
                 actual_delay = self.base_delay + self.base_delay * delay_percentage
                 time.sleep(actual_delay)
-                kmNet.enc_keydown(14)
+                kmNet.enc_keydown(14)  #số 14 là virtual key K. thêm K thành bắn trong cài đặt của Valorant
                 #kmNet.enc_left(1)  # Click mouse
                 time.sleep(np.random.uniform(0.080, 0.12))
                 kmNet.enc_keyup(14)
