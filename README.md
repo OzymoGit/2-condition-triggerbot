@@ -3,4 +3,5 @@ Một dự án để tìm hiểu cách hoạt động của gian lận phần c�
 
 Python 3.11 -
 Màu enemy: Purple -
-Màu tâm: green
+Màu tâm: green - 
+Bắn: Phím K
