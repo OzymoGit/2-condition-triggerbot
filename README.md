@@ -10,7 +10,7 @@ Dự án "2-condition-triggerbot" là một ứng dụng phần cứng nhắm m�
 
 * Thư viện KmBox (có sẵn trong source dưới dạng KmNet.pyd)
 * Python 3.11
-* Kmbox (Phần cứng)
+* Kmbox phiên bản Net (Phần cứng)
 
 ### Cài đặt
 
