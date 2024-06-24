@@ -1,5 +1,5 @@
 # 2-condition-triggerbot
-
+[![N|Solid]([https://cldup.com/dTxpPi9lDf.thumb.png](https://github.com/OzymoGit/2-condition-triggerbot/blob/main/Assest/readme/logo.png))]
 Hardware trigger-bot base on Kmbox. 
 
 ## Mô tả
