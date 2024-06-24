@@ -119,7 +119,7 @@ class TriggerBot:
                 print(f"Program {state}...")
                 time.sleep(0.1)
             elif keyboard.is_pressed('F4'):
-                print("Reloading config...")
+                print("Reload config: Done")
                 self.load_config()
                 time.sleep(0.1)
             time.sleep(0.1)
