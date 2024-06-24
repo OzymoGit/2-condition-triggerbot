@@ -146,8 +146,12 @@ class TriggerBot:
                 print("Bạn đã bấm phím F2. Thoát chương trình.")
                 self.exit_program = True
             elif keyboard.is_pressed('F3'):
-                print("Bạn đã bấm phím F3. Tạm dừng chương trình.")
-                self.paused = True
+                if self.paused:
+                    print("Bạn đã bấm phím F3. Tiếp tục chương trình.")
+                    self.paused = False  # Resume the program
+                else:
+                    print("Bạn đã bấm phím F3. Tạm dừng chương trình.")
+                    self.paused = True  # Pause the program
                 time.sleep(0.1)  # Đợi để tránh nhận nhiều lần khi giữ phím
             elif keyboard.is_pressed('F4'):
                 print("Bạn đã bấm phím F4. Reload file config.json.")
@@ -182,7 +186,7 @@ if __name__ == "__main__":
     print("2-con-trigger tạo bởi Ozymo. Ver 1.3")
     print("-" * 50)  # Dòng ngăn cách để dễ nhìn
     print("Bấm F2 để thoát chương trình.")
-    print("Bấm F3 để tạm dừng chương trình.")
+    print("Bấm F3 để tạm dừng/chạy lại chương trình.")
     print("Bấm F4 để reload file config.json.")
     print("-" * 50)  # Dòng ngăn cách để dễ nhìn
     
