@@ -43,13 +43,11 @@ python run.py
 https://discord.com/invite/C3MY4kuAcD
 
 
-## Authors
-
-Contributors names and contact info
+## Các tác giả
 
 Ozymo
 
-## Version History
+## Lịch sử phiên bản
 
 * 0.2
     simpleUI
@@ -60,5 +58,4 @@ Ozymo
 
 This project is licensed under the GPU 3.0 License - see the LICENSE.md file for details
 
-## Acknowledgments
 
