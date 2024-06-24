@@ -46,7 +46,7 @@ cd 2-condition-triggerbot
   "scope_color_tolerance_alt": 40  #color tolerance của màu tâm thứ 2
 }
 ```
-2. Chạy chương trình:
+3. Chạy chương trình:
 ```
 python run.py
 ```
