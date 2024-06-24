@@ -46,7 +46,14 @@ cd 2-condition-triggerbot
   "scope_color_tolerance_alt": 40  #color tolerance của màu tâm thứ 2
 }
 ```
-3. Chạy chương trình:
+3. Chỉnh sửa màu tâm
++ Primary crosshair: Cyan
++ Aimdownsight and Sniper: Green
+![Screenshot (1)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/bc6ae8fe-cb7d-4e19-a6c7-621036469293)
+![Screenshot (2)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/35e2d3f1-0f76-4071-b8f3-ca587316d30c)
+![Screenshot (3)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/9be41e94-61af-472c-8cb3-2925111c60b8)
+Bật cả "Movement error", "Firing error", multiplier để X3
+4.Chạy chương trình:
 ```
 python run.py
 ```
