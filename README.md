@@ -59,7 +59,8 @@ Bật cả "Movement error", "Firing error", multiplier để X3
 ```
 python run.py
 ```
-5. Phím tắt
+5. Phím tắt:
+   
 F2: Thoát
 F3: Pause/unpause
 F4: Reload config
