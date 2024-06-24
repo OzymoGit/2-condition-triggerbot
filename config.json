@@ -1,10 +1,10 @@
 {
   "ip": "192.168.2.188",
-  "port": "16896", #port của bạn
-  "uid": "46405C53", #UID của bạn
+  "port": "16896", 
+  "uid": "46405C53", 
   "trigger_delay": 0,
   "base_delay": 0,
-  "color_tolerance": 40, #tolerance càng cao thì khoảng màu được chấp nhận càng rộng
+  "color_tolerance": 40, 
   "target_color": [250, 100, 250],
   "scope_color": [0, 255, 0,
   "scope_color_tolerance": 40,
