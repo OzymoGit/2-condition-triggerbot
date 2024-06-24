@@ -197,6 +197,6 @@ if __name__ == "__main__":
     threading.Thread(target=triggerbot_instance.startthreads).start()  # Khởi động các luồng phát hiện và kích hoạt bắn
     threading.Thread(target=triggerbot_instance.keyboard_listener).start()  # Lắng nghe bàn phím
 
-    # Lặp chính để chương trình không kết thúc
+    # Main loop để chương trình chạy liên tục
     while not triggerbot_instance.exit_program:
-        time.sleep(0.1)
+        time.sleep(0.01) #tăng để giảm tiêu thụ CPU
