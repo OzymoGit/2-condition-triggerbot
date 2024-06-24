@@ -59,6 +59,16 @@ Bật cả "Movement error", "Firing error", multiplier để X3
 ```
 python run.py
 ```
+5. Phím tắt
+F2: Thoát
+F3: Pause/unpause
+F4: Reload config
+
+Xmousebutton2 cho alternate trigger mode
+
+![Screenshot 2024-06-24 222638](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/c1873efc-af2f-4204-8d46-3a43210763ce)
+
+
 ## Trợ giúp
 
 Để biết thêm thông tin chi tiết, tham gia Discord của mình
