@@ -10,7 +10,7 @@ Dự án "2-condition-triggerbot" là một ứng dụng phần cứng nhắm m�
 
 ### Dependencies
 
-* Thư viện KmBox
+* Module KmBox
 * Python 3.11
 * Kmbox
 
