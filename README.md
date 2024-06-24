@@ -36,7 +36,7 @@ cd 2-condition-triggerbot
   "ip": "192.168.2.188",  #Bạn thay bằng IP của Kmbox
   "port": "16896",        #Bạn thay bằng port của Kmbox
   "uid": "46405C53",      #Bạn thay bằng UID của Kmbox
-  "trigger_delay": 0,     #Delay giữ 2 lần bắn, cái này hình như quên chưa implent xD
+  "trigger_delay": 0,     #Delay giữa 2 lần bắn, cái này hình như quên chưa implent xD
   "base_delay": 0,        #Base delay này là delay từ lúc phát hiện pixel đến lúc gửi chuột trái nên để 0 cho nhanh
   "color_tolerance": 40,  # Color tolerance main, cái này càng cao thì khoảng màu chấp nhận càng rộng. Tăng lên nếu bot không nhận diện màu
   "target_color": [250, 100, 250],  #Đây là màu outline của địch, default là màu Tím
