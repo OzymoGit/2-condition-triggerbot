@@ -8,52 +8,51 @@ Hardware trigger-bot base on Kmbox
 
 </div>
 
-## Mô tả
-Dự án "2-condition-triggerbot" là một ứng dụng với sự hỗ trợ của Kmbox, được thiết kế để nghiên cứu và hiểu cách hoạt động của các phương pháp gian lận phần cứng trong game V.
+## About
+The "2-condition-triggerbot" project, powered by Kmbox, is an application designed to explore and study hardware cheating methods within the game V. It utilizes computer vision techniques to detect and respond to specific in-game visual cues, enabling research into gaming automation and enhancement techniques.
 ![06241-ezgif com-optimize](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/c9e8ced2-3ab3-4c19-bfed-6f864f5aa7a7)
-## Bắt đầu
+## Getting Started
 
-### Chuẩn bị
-
-* Thư viện KmBox (có sẵn trong source dưới dạng KmNet.pyd)
+### Prerequisites
+* KmBox library (available as KmNet.pyd in the source)
 * Python 3.11
-* Kmbox phiên bản Net (Phần cứng)
+* Kmbox Net version
 
-### Cài đặt
+### Installation
 
-Clone repository từ GitHub:
+Clone the repository from GitHub:
 
 ```
 git clone https://github.com/OzymoGit/2-condition-triggerbot.git
 ```
-Cài đặt các gói Python cần thiết:
+Install required Python packages:
 
 ```
 pip install -r requirements.txt
 ```
-### Chạy chương trình
-1. Di chuyển đến thư mục dự án:
+### Running the Program
+1. Navigate to the project directory:
 
 ```
 cd 2-condition-triggerbot
 ```
-2. Chỉnh sủa file config.json
+2. Edit the config.json file:
 ```
 {
-  "ip": "192.168.2.188",  #Bạn thay bằng IP của Kmbox
-  "port": "16896",        #Bạn thay bằng port của Kmbox
-  "uid": "46405C53",      #Bạn thay bằng UID của Kmbox
-  "trigger_delay": 0,     #Delay giữa 2 lần bắn, cái này hình như quên chưa implent xD
-  "base_delay": 0,        #Base delay này là delay từ lúc phát hiện pixel đến lúc gửi chuột trái nên để 0 cho nhanh
-  "color_tolerance": 40,  # Color tolerance main, cái này càng cao thì khoảng màu chấp nhận càng rộng. Tăng lên nếu bot không nhận diện màu
-  "target_color": [250, 100, 250],  #Đây là màu outline của địch, default là màu Tím
-  "scope_color": [0, 255, 0],    #Màu tâm chính, default là màu xanh lá
-  "scope_color_tolerance": 40,   #corlor tolerance của màu tâm main
-  "scope_color_alt": [0, 255, 255],  #Màu tâm thứ 2, cái này sẽ check khi bạn giữ chuột bên thứ 2. thay cho màu tâm chính
-  "scope_color_tolerance_alt": 40  #color tolerance của màu tâm thứ 2
+  "ip": "192.168.2.188",  // Replace with Kmbox IP
+  "port": "16896",        // Replace with Kmbox port
+  "uid": "46405C53",      // Replace with Kmbox UID
+  "trigger_delay": 0,     // Delay between shots (not implemented yet)
+  "base_delay": 0,        // Base delay from pixel detection to left mouse click, set to 0 for faster response
+  "color_tolerance": 40,  // Main color tolerance, increase if the bot does not detect color
+  "target_color": [250, 100, 250],  // Enemy outline color, default is Purple
+  "scope_color": [0, 255, 0],       // Primary crosshair color, default is Green
+  "scope_color_tolerance": 40,      // Color tolerance for primary crosshair
+  "scope_color_alt": [0, 255, 255], // Secondary crosshair color, used when holding second mouse button instead of primary
+  "scope_color_tolerance_alt": 40   // Color tolerance for secondary crosshair
 }
 ```
-3. Chỉnh sửa màu tâm
+3. Adjust crosshair colors:
 + Primary crosshair: Cyan
 + Aimdownsight and Sniper: Green
   
@@ -61,31 +60,31 @@ cd 2-condition-triggerbot
 ![Screenshot (3)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/7d8393ca-1b16-4159-bc15-71d1c4f362f7)
 ![Screenshot (1)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/fe5a5bcb-74fd-41d7-9336-4de2a3bb6f64)
 
-Bật cả "Movement error", "Firing error", multiplier để X3
-4.Chạy chương trình:
+Turn on "Movement error", "Firing error", multiplier to 3 times
+4.Run the program:
 ```
 python run.py
 ```
-5. Phím tắt:
-+ F2: Thoát
+5. Keyboard Shortcuts:
++ F2: Exit
 + F3: Pause/unpause
 + F4: Reload config
 
-Xmousebutton2 cho alternate trigger mode
+Xmousebutton2 for alternate trigger mode
 
 ![Screenshot 2024-06-24 222638](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/c1873efc-af2f-4204-8d46-3a43210763ce)
 
 
-## Trợ giúp
+## Help
 
-Bạn cần trợ giúp? Tham gia server discord <a href="https://discord.gg/C3MY4kuAcD" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="C3MY4kuAcD" height="30" width="40" /></a>
+Need assistance? Join the Discord server <a href="https://discord.gg/C3MY4kuAcD" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="C3MY4kuAcD" height="30" width="40" /></a>
 
 
-## Các tác giả
+## Authors
 
-Ozymo
+   Ozymo
 
-<h3 align="left">Liên hệ:</h3>
+<h3 align="left">Support:</h3>
 <p align="left">
 <a href="https://twitter.com/ozymotv" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="ozymotv" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/ozymo" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ozymo" height="30" width="40" /></a>
