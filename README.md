@@ -65,6 +65,6 @@ Ozymo
 
 ## License
 
-This project is licensed under the GPU 3.0 License - see the LICENSE.md file for details
+This project is licensed under the GPL 3.0 License - see the LICENSE file for details
 
 
