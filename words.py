@@ -6,6 +6,7 @@ from mss import mss as mss_module
 import kmNet
 from ctypes import WinDLL
 import sys
+import keyboard  # Thêm thư viện keyboard để bắt sự kiện từ bàn phím
 
 # Khởi tạo các thư viện hệ thống của Windows để có thể sử dụng các hàm API của Windows (chủ yếu cho xác định 2 chiều cao dài của cửa sổ)
 user32, kernel32, shcore = (
@@ -54,6 +55,7 @@ class TriggerBot:
         self.exit_program = False
         self.is_scoped = False
         self.target_detected = False
+        self.paused = False  # Thêm biến để kiểm tra xem có đang tạm dừng không
 
         # Đọc cấu hình từ file config.json
         try:
@@ -86,49 +88,55 @@ class TriggerBot:
         """Hàm phát hiện màu sắc theo yêu cầu."""
         sct = mss_module()
         while not self.exit_program:
-            # Chụp một vùng nhỏ trên màn hình tại vị trí định nghĩa bởi GRAB_ZONE
-            img = np.array(sct.grab(GRAB_ZONE))
+            if not self.paused:  # Chỉ chạy khi không bị tạm dừng
+                # Chụp một vùng nhỏ trên màn hình tại vị trí định nghĩa bởi GRAB_ZONE
+                img = np.array(sct.grab(GRAB_ZONE))
 
-            # Tạo mask màu để phát hiện màu mục tiêu trong vùng đã chụp
-            color_mask = (
-                (img[:, :, 0] > self.R - self.color_tolerance) & (img[:, :, 0] < self.R + self.color_tolerance) &
-                (img[:, :, 1] > self.G - self.color_tolerance) & (img[:, :, 1] < self.G + self.color_tolerance) &
-                (img[:, :, 2] > self.B - self.color_tolerance) & (img[:, :, 2] < self.B + self.color_tolerance)
-            )
+                # Tạo mask màu để phát hiện màu mục tiêu trong vùng đã chụp
+                color_mask = (
+                    (img[:, :, 0] > self.R - self.color_tolerance) & (img[:, :, 0] < self.R + self.color_tolerance) &
+                    (img[:, :, 1] > self.G - self.color_tolerance) & (img[:, :, 1] < self.G + self.color_tolerance) &
+                    (img[:, :, 2] > self.B - self.color_tolerance) & (img[:, :, 2] < self.B + self.color_tolerance)
+                )
+                
+                # Cập nhật trạng thái target_detected nếu phát hiện màu mục tiêu trong vùng đã chụp
+                self.target_detected = np.any(color_mask)
             
-            # Cập nhật trạng thái target_detected nếu phát hiện màu mục tiêu trong vùng đã chụp
-            self.target_detected = np.any(color_mask)
+            time.sleep(0.01)  # Delay để hạn chế tài nguyên CPU
 
     def isScoped(self):
         """Hàm phát hiện màu tâm khi người chơi đang scope."""
         sct = mss_module()
         while not self.exit_program:
-            # Chụp một vùng nhỏ trên màn hình tại vị trí scope (2x2)
-            img = np.array(sct.grab(SCOPE_GRAB_ZONE))
-            # Bypass với màu mặc định (cái này là chuột bên 2 - Xmousebutton2) Nhấn nút chuột này thì triggerbot sẽ dùng alternate color
-            if kmNet.isdown_side2() == 1:
-                # check bằng alternate color 
-                scope_color = (self.scope_R_alt, self.scope_G_alt, self.scope_B_alt)
-                scope_color_tolerance = self.scope_color_tolerance_alt
-            else:
-                # check bằng scope_color như bình thường
-                scope_color = (self.scope_R, self.scope_G, self.scope_B)
-                scope_color_tolerance = self.scope_color_tolerance
+            if not self.paused:  # Chỉ chạy khi không bị tạm dừng
+                # Chụp một vùng nhỏ trên màn hình tại vị trí scope (2x2)
+                img = np.array(sct.grab(SCOPE_GRAB_ZONE))
+                # Bypass với màu mặc định (cái này là chuột bên 2 - Xmousebutton2) Nhấn nút chuột này thì triggerbot sẽ dùng alternate color
+                if kmNet.isdown_side2() == 1:
+                    # check bằng alternate color 
+                    scope_color = (self.scope_R_alt, self.scope_G_alt, self.scope_B_alt)
+                    scope_color_tolerance = self.scope_color_tolerance_alt
+                else:
+                    # check bằng scope_color như bình thường
+                    scope_color = (self.scope_R, self.scope_G, self.scope_B)
+                    scope_color_tolerance = self.scope_color_tolerance
 
-            # Tạo mask màu để phát hiện màu tâm ảo trong vùng đã chụp
-            color_mask = (
-                (img[:, :, 0] > scope_color[0] - scope_color_tolerance) & (img[:, :, 0] < scope_color[0] + scope_color_tolerance) &
-                (img[:, :, 1] > scope_color[1] - scope_color_tolerance) & (img[:, :, 1] < scope_color[1] + scope_color_tolerance) &
-                (img[:, :, 2] > scope_color[2] - scope_color_tolerance) & (img[:, :, 2] < scope_color[2] + scope_color_tolerance)
-            )
+                # Tạo mask màu để phát hiện màu tâm ảo trong vùng đã chụp
+                color_mask = (
+                    (img[:, :, 0] > scope_color[0] - scope_color_tolerance) & (img[:, :, 0] < scope_color[0] + scope_color_tolerance) &
+                    (img[:, :, 1] > scope_color[1] - scope_color_tolerance) & (img[:, :, 1] < scope_color[1] + scope_color_tolerance) &
+                    (img[:, :, 2] > scope_color[2] - scope_color_tolerance) & (img[:, :, 2] < scope_color[2] + scope_color_tolerance)
+                )
+                
+                # Cập nhật trạng thái is_scoped nếu phát hiện màu tâm ảo
+                self.is_scoped = np.any(color_mask)
             
-            # Cập nhật trạng thái is_scoped nếu phát hiện màu tâm ảo
-            self.is_scoped = np.any(color_mask)
+            time.sleep(0.01)  # Delay để hạn chế tài nguyên CPU
 
     def trigger(self):
         """Hàm kích hoạt bắn khi phát hiện mục tiêu và đang scope."""
         while not self.exit_program:
-            if self.is_scoped and self.target_detected:
+            if self.is_scoped and self.target_detected and not self.paused:
                 # Tính toán độ trễ thực tế dựa trên cấu hình (nếu base delay là 0ms thì actual delay cũng sẽ là 0ms)
                 delay_percentage = self.trigger_delay / 100.0
                 actual_delay = self.base_delay + self.base_delay * delay_percentage
@@ -148,6 +156,58 @@ class TriggerBot:
         threading.Thread(target=self.isScoped).start()
         threading.Thread(target=self.trigger).start()
 
-# Khởi tạo và chạy TriggerBot
-triggerbot_instance = TriggerBot()
-triggerbot_instance.startthreads()
+    def keyboard_listener(self):
+        """Hàm lắng nghe bàn phím để bắt sự kiện F2, F3, F4."""
+        while not self.exit_program:
+            if keyboard.is_pressed('F2'):
+                print("Bạn đã bấm phím F2. Thoát chương trình.")
+                self.exit_program = True
+                exit_program()
+            elif keyboard.is_pressed('F3'):
+                print("Bạn đã bấm phím F3. Tạm dừng chương trình.")
+                self.paused = True
+                time.sleep(0.1)  # Đợi để tránh nhận nhiều lần khi giữ phím
+            elif keyboard.is_pressed('F4'):
+                print("Bạn đã bấm phím F4. Reload file config.json.")
+                self.reload_config()
+                time.sleep(0.1)  # Đợi để tránh nhận nhiều lần khi giữ phím
+            time.sleep(0.01)  # Delay để hạn chế tài nguyên CPU
+
+    def reload_config(self):
+        """Hàm reload lại file config.json."""
+        try:
+            with open('config.json') as json_file:
+                data = json.load(json_file)
+            self.ip = data["ip"]
+            self.port = data["port"]
+            self.uid = data["uid"]
+            self.trigger_delay = data["trigger_delay"]
+            self.base_delay = data["base_delay"]
+            self.color_tolerance = data["color_tolerance"]
+            self.R, self.G, self.B = data["target_color"]
+            self.scope_R, self.scope_G, self.scope_B = data["scope_color"]
+            self.scope_color_tolerance = data["scope_color_tolerance"]
+            self.scope_R_alt, self.scope_G_alt, self.scope_B_alt = data["scope_color_alt"]
+            self.scope_color_tolerance_alt = data["scope_color_tolerance_alt"]
+            print("Reload config.json thành công.")
+        except KeyError as e:
+            print(f"Không tìm thấy biến trong config.json: {e}")
+        except FileNotFoundError:
+            print("Không tìm thấy file config.json.")
+    
+# Hàm main
+if __name__ == "__main__":
+    print("Chào mừng bạn đã sử dụng 2-con-trigger tạo bởi Ozymo. Lưu ý: Đây là code public và bạn có thể bị ban")
+    print("Bấm F2 để thoát chương trình.")
+    print("Bấm F3 để tạm dừng chương trình.")
+    print("Bấm F4 để reload file config.json.")
+    print("-" * 50)  # Dòng ngăn cách để dễ nhìn
+    
+    # Khởi tạo và chạy TriggerBot
+    triggerbot_instance = TriggerBot()
+    threading.Thread(target=triggerbot_instance.startthreads).start()  # Khởi động các luồng phát hiện và kích hoạt bắn
+    threading.Thread(target=triggerbot_instance.keyboard_listener).start()  # Lắng nghe bàn phím
+
+    # Lặp chính để chương trình không kết thúc
+    while not triggerbot_instance.exit_program:
+        time.sleep(0.1)
