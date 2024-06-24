@@ -126,9 +126,11 @@ class TriggerBot:
                 time.sleep(actual_delay)
                 
                 # Gửi lệnh bắn (nhấn phím) qua kmNet
-                kmNet.enc_keydown(14)  # số 14 là virtual key K, thêm K thành bắn trong cài đặt của Valorant
+                #kmNet.enc_keydown(14)  # số 14 là virtual key K, thêm K thành bắn trong cài đặt của Valorant
+                kmNet.enc_left(1)
                 time.sleep(np.random.uniform(0.080, 0.12)) #thời gian giữ trạng thái bắn, randomize để giống người
-                kmNet.enc_keyup(14)
+                #kmNet.enc_keyup(14)
+                kmNet.enc_left(0)
                 time.sleep(np.random.uniform(0.05, 0.09)) #thời gian delay giữa 2 lần bắn, để tránh rapid fire
             else:
                 time.sleep(0.01) #delay giữa vòng lặp để hạn chế tiêu hao cpu
