@@ -4,7 +4,7 @@
  
 Hardware trigger-bot base on Kmbox 
 
-[**English**](./docs/en/README.en.md)
+[**Tiếng Việt**](./docs/vi/README.vi.md)
 
 </div>
 
