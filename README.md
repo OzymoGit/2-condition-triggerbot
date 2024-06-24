@@ -71,9 +71,7 @@ Xmousebutton2 cho alternate trigger mode
 
 ## Trợ giúp
 
-Để biết thêm thông tin chi tiết, tham gia Discord của mình
-
-<a href="https://discord.gg/C3MY4kuAcD" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="C3MY4kuAcD" height="30" width="40" /></a>
+Bạn cần trợ giúp? Tham gia server discord <a href="https://discord.gg/C3MY4kuAcD" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="C3MY4kuAcD" height="30" width="40" /></a>
 
 
 ## Các tác giả
