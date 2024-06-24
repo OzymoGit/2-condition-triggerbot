@@ -62,7 +62,9 @@ python run.py
 5. Phím tắt:
    
 F2: Thoát
+
 F3: Pause/unpause
+
 F4: Reload config
 
 Xmousebutton2 cho alternate trigger mode
