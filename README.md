@@ -2,11 +2,11 @@
 
 Hardware trigger-bot base on Kmbox. 
 
-## Description
+## Mô tả
 
-An in-depth paragraph about your project and overview of use.
+Đây là một dự án dùng để tìm hiểu cách hoạt động của hardware cheat, mình không chịu trách nhiệm nếu tài khoản của bạn bị ban.
 
-## Getting Started
+## Bắt đầu
 
 ### Dependencies
 
@@ -14,12 +14,12 @@ An in-depth paragraph about your project and overview of use.
 * Python 3.11
 * Kmbox
 
-### Installing
+### Tài đặt
 
 Clone repository từ GitHub:
 
 ```
-git clone https://github.com/your_username/2-condition-triggerbot.git
+git clone https://github.com/OzymoGit/2-condition-triggerbot.git
 ```
 Cài đặt các gói Python cần thiết:
 
