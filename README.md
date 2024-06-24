@@ -64,6 +64,7 @@ cd 2-condition-triggerbot
 ![Screenshot (1)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/fe5a5bcb-74fd-41d7-9336-4de2a3bb6f64)
 
 Turn on "Movement error", "Firing error", multiplier to 3 times
+
 4.Run the program:
 ```
 python run.py
