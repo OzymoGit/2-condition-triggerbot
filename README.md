@@ -3,6 +3,9 @@
 <img src="https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange" />
  
 Hardware trigger-bot base on Kmbox 
+
+[**English**](./docs/en/README.en.md)
+
 </div>
 
 ## Mô tả
