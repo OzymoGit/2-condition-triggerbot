@@ -14,7 +14,7 @@ Hardware trigger-bot base on Kmbox.
 * Python 3.11
 * Kmbox
 
-### Tài đặt
+### Cài đặt
 
 Clone repository từ GitHub:
 
@@ -27,7 +27,7 @@ Cài đặt các gói Python cần thiết:
 pip install -r requirements.txt
 ```
 ### Chạy chương trình
-1.Di chuyển đến thư mục dự án:
+1. Di chuyển đến thư mục dự án:
 
 ```
 cd 2-condition-triggerbot
