@@ -49,9 +49,9 @@ cd 2-condition-triggerbot
 3. Chỉnh sửa màu tâm
 + Primary crosshair: Cyan
 + Aimdownsight and Sniper: Green
-![Screenshot (1)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/bc6ae8fe-cb7d-4e19-a6c7-621036469293)
-![Screenshot (2)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/35e2d3f1-0f76-4071-b8f3-ca587316d30c)
-![Screenshot (3)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/9be41e94-61af-472c-8cb3-2925111c60b8)
+![Screenshot (2)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/da8a76a0-7409-4225-9271-9c3af41d7581)
+![Screenshot (3)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/7d8393ca-1b16-4159-bc15-71d1c4f362f7)
+![Screenshot (1)](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/820ae7e0-eba2-442a-bb50-09bcb2df7d02)
 Bật cả "Movement error", "Firing error", multiplier để X3
 4.Chạy chương trình:
 ```
