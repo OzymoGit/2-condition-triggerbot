@@ -1,18 +1,16 @@
 ![logo](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/86aed2d0-5393-42c1-b9a4-d0d29974a099)
-# 2-condition-triggerbot
-
-Hardware trigger-bot base on Kmbox. 
+### 2-condition-triggerbot
 
 ## Mô tả
 Dự án "2-condition-triggerbot" là một ứng dụng phần cứng nhắm mục tiêu với sự hỗ trợ của Kmbox, được thiết kế để nghiên cứu và hiểu cách hoạt động của các phương pháp gian lận phần cứng trong game V.
 ![06241-ezgif com-optimize](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/c9e8ced2-3ab3-4c19-bfed-6f864f5aa7a7)
 ## Bắt đầu
 
-### Dependencies
+### Chuẩn bị
 
-* Module KmBox
+* Thư viện KmBox (có sẵn trong source dưới dạng KmNet.pyd)
 * Python 3.11
-* Kmbox
+* Kmbox (Phần cứng)
 
 ### Cài đặt
 
