@@ -1,7 +1,7 @@
-![logo](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/86aed2d0-5393-42c1-b9a4-d0d29974a099)
+
 <div align="center">
 
-<h1>2-condition-triggerbot</h1>
+<h1> ![logo](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/86aed2d0-5393-42c1-b9a4-d0d29974a099) 2-condition-triggerbot</h1>
 Hardware trigger-bot base on Kmbox 
 </div>
 
