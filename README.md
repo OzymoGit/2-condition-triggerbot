@@ -1,3 +1,4 @@
+![logo](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/86aed2d0-5393-42c1-b9a4-d0d29974a099)
 # 2-condition-triggerbot
 
 Hardware trigger-bot base on Kmbox. 
@@ -5,7 +6,7 @@ Hardware trigger-bot base on Kmbox.
 ## Mô tả
 
 Đây là một dự án dùng để tìm hiểu cách hoạt động của hardware cheat, mình không chịu trách nhiệm nếu tài khoản của bạn bị ban.
-
+![06241-ezgif com-optimize](https://github.com/OzymoGit/2-condition-triggerbot/assets/33122491/c9e8ced2-3ab3-4c19-bfed-6f864f5aa7a7)
 ## Bắt đầu
 
 ### Dependencies
