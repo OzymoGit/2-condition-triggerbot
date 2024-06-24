@@ -30,6 +30,22 @@ pip install -r requirements.txt
 ```
 cd 2-condition-triggerbot
 ```
+2. Chỉnh sủa file config.json
+```
+{
+  "ip": "192.168.2.188",  #Bạn thay bằng IP của Kmbox
+  "port": "16896",        #Bạn thay bằng port của Kmbox
+  "uid": "46405C53",      #Bạn thay bằng UID của Kmbox
+  "trigger_delay": 0,     #Delay giữ 2 lần bắn, cái này hình như quên chưa implent xD
+  "base_delay": 0,        #Base delay này là delay từ lúc phát hiện pixel đến lúc gửi chuột trái nên để 0 cho nhanh
+  "color_tolerance": 40,  # Color tolerance main, cái này càng cao thì khoảng màu chấp nhận càng rộng. Tăng lên nếu bot không nhận diện màu
+  "target_color": [250, 100, 250],  #Đây là màu outline của địch, default là màu Tím
+  "scope_color": [0, 255, 0],    #Màu tâm chính, default là màu xanh lá
+  "scope_color_tolerance": 40,   #corlor tolerance của màu tâm main
+  "scope_color_alt": [0, 255, 255],  #Màu tâm thứ 2, cái này sẽ check khi bạn giữ chuột bên thứ 2. thay cho màu tâm chính
+  "scope_color_tolerance_alt": 40  #color tolerance của màu tâm thứ 2
+}
+```
 2. Chạy chương trình:
 ```
 python run.py
